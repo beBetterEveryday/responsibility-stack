@@ -1,0 +1,53 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/dist/plugin/hook.cjs\"",
+            "commandWindows": "node \"$env:CLAUDE_PLUGIN_ROOT\\dist\\plugin\\hook.cjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|apply_patch|Edit|Write|Read|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/dist/plugin/hook.cjs\"",
+            "commandWindows": "node \"$env:CLAUDE_PLUGIN_ROOT\\dist\\plugin\\hook.cjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/dist/plugin/hook.cjs\"",
+            "commandWindows": "node \"$env:CLAUDE_PLUGIN_ROOT\\dist\\plugin\\hook.cjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/dist/plugin/hook.cjs\"",
+            "commandWindows": "node \"$env:CLAUDE_PLUGIN_ROOT\\dist\\plugin\\hook.cjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

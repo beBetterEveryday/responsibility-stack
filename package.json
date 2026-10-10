@@ -1,0 +1,48 @@
+{
+  "name": "responsibility-stack",
+  "version": "0.5.0",
+  "description": "Onboard repositories, trace AI code responsibility, preserve known-good feature states, and atomically restore attributable drift.",
+  "type": "module",
+  "bin": {
+    "respstack": "dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "dist/plugin/*.cjs",
+    ".codex-plugin",
+    ".mcp.json",
+    "hooks",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "pnpm build:core && pnpm build:plugin",
+    "build:core": "tsc -p tsconfig.json",
+    "build:plugin": "esbuild src/hook.ts src/mcp.ts --bundle --platform=node --format=cjs --out-extension:.js=.cjs --outdir=dist/plugin",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm build && node --test dist/test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "ai",
+    "responsibility",
+    "provenance",
+    "rollback",
+    "audit-trail",
+    "coding-agent"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "diff": "^9.0.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "esbuild": "^0.28.2"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "responsibility-stack",
+  "version": "0.5.0",
+  "description": "Onboards repositories, records attributable AI edits, preserves signed known-good feature states, and atomically restores attributable drift.",
+  "author": {
+    "name": "ResponsibilityStack Contributors"
+  },
+  "license": "MIT",
+  "keywords": ["ai", "responsibility", "provenance", "rollback", "audit-trail"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "ResponsibilityStack",
+    "shortDescription": "Trace, compare, and reverse AI code changes",
+    "longDescription": "Initializes signed repository evidence, automatically records which AI turn and tool changed code, preserves known-good feature states, and provides fail-closed feature, run, edit, hunk, and symbol rollback.",
+    "developerName": "ResponsibilityStack Contributors",
+    "category": "Developer Tools",
+    "capabilities": ["Lifecycle hooks", "Read", "Write"],
+    "defaultPrompt": [
+      "Onboard this repository for responsibility tracking.",
+      "Why did this file change?",
+      "Show the AI edit history for this feature.",
+      "Remember this feature as working.",
+      "Safely restore this feature to its working checkpoint.",
+      "Plan a safe rollback for this change."
+    ],
+    "brandColor": "#C2410C"
+  }
+}

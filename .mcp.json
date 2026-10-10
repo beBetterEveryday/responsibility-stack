@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "responsibility-stack": {
+      "command": "node",
+      "args": ["./dist/plugin/mcp.cjs"],
+      "cwd": "."
+    }
+  }
+}
